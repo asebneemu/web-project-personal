@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "title": "JavaScript",
+      "description": "JavaScript is a versatile language used for web development."
+    },
+    {
+      "id": 2,
+      "title": "React",
+      "description": "React is a JavaScript library for building user interfaces."
+    },
+    {
+      "id": 3,
+      "title": "CSS",
+      "description": "CSS is used for styling and layout on web pages."
+    }
+  ]
+  
