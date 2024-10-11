@@ -1,3 +1,6 @@
+import LanguageToggle from '../LanguageToggle'; // Dil değiştirme butonunu import ediyoruz
+
+// eslint-disable-next-line react/prop-types
 function DarkModeButton({ darkMode, toggleDarkMode }) {
   return (
     <div
@@ -6,7 +9,11 @@ function DarkModeButton({ darkMode, toggleDarkMode }) {
       }`}
     >
       {/* 1140px genişliğinde ortalanmış div */}
-      <div className="w-[1140px] h flex justify-end">
+      <div className="w-[1140px] h flex justify-end items-center space-x-4 pr-4">
+        {/* Türkçeye Geç Butonu */}
+        <LanguageToggle />
+
+        {/* Dark Mode Butonu */}
         <div className="flex items-center space-x-2">
           <div
             onClick={toggleDarkMode} // Toggle Dark Mode

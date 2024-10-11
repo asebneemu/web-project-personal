@@ -1,0 +1,155 @@
+{
+  "en": {
+    "header": {
+      "name": "Aleyna Şebnem Uçak",
+      "title": "Creative thinker, Minimalism lover",
+      "description": "I love to design minimal and creative solutions for complex problems. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illo ullam, saepe nemo sit fugit, officia autem assumenda eveniet est ipsa vitae reprehenderit sequi nisi, quidem perspiciatis non. Labore, voluptates!",
+      "buttons": {
+        "hireMe": "Hire Me!",
+        "github": "Github",
+        "linkedin": "Linkedin"
+      }
+    },
+    "heroes": {
+      "skillsText": "Skills",
+      "projectsText": "Projects",
+      "hireMeText": "Hire Me!"
+    },
+    "skills": [
+      {
+        "id": 1,
+        "title": "JavaScript",
+        "description": "JavaScript is a versatile language used for web development."
+      },
+      {
+        "id": 2,
+        "title": "React",
+        "description": "React is a JavaScript library for building user interfaces."
+      },
+      {
+        "id": 3,
+        "title": "CSS",
+        "description": "CSS is used for styling and layout on web pages."
+      }
+    ],
+    "profile": {
+      "title": "Profile",
+      "altBaslik": "About Me",
+      "dogumTarihi": "Birth Date:",
+      "birthDate": "01/01/1990",
+      "lokasyon": "Location:",
+      "location": "Istanbul, Turkey",
+      "ogrenimDurumu": "Education:",
+      "education": "Bachelor's Degree in Computer Science",
+      "rol": "Preferred Role:",
+      "preferredRole": "Frontend Developer",
+      "aboutMe": "I am a highly motivated and dedicated individual with a passion for learning and development. I have a strong interest in frontend development, and I am eager to contribute to meaningful projects that help people and solve real-world problems. I enjoy working in teams, solving challenges, and continuously improving my skills."
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Project 1",
+        "description": "This is the description for project 1.",
+        "image": "/path/to/image1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Project 2",
+        "description": "This is the description for project 2.",
+        "image": "/path/to/image2.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Project 3",
+        "description": "This is the description for project 3.",
+        "image": "/path/to/image3.jpg"
+      }
+    ],
+    "footer": {
+      "heading": "Let’s work together on your next product.",
+      "paragraph": "We are here to help you build something great and innovative.",
+      "buttons": {
+        "personalBlog": "Personal Blog",
+        "github": "Github",
+        "linkedin": "Linkedin"
+      }
+    }
+  },
+
+  "tr": {
+    "header": {
+      "name": "Aleyna Şebnem Uçak",
+      "title": "Yaratıcı düşünen, Minimalizm aşığı",
+      "description": "Karmaşık sorunlar için minimal ve yaratıcı çözümler tasarlamayı seviyorum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate illo ullam, saepe nemo sit fugit, officia autem assumenda eveniet est ipsa vitae reprehenderit sequi nisi, quidem perspiciatis non. Labore, voluptates!",
+      "buttons": {
+        "hireMe": "Beni İşe Al!",
+        "github": "Github",
+        "linkedin": "Linkedin"
+      }
+    },
+    "heroes": {
+      "skillsText": "Beceriler",
+      "projectsText": "Projeler",
+      "hireMeText": "Beni İşe Al!"
+    },
+    "skills": [
+      {
+        "id": 1,
+        "title": "JavaScript",
+        "description": "JavaScript, web geliştirmede kullanılan çok yönlü bir dildir."
+      },
+      {
+        "id": 2,
+        "title": "React",
+        "description": "React, kullanıcı arayüzleri oluşturmak için kullanılan bir JavaScript kütüphanesidir."
+      },
+      {
+        "id": 3,
+        "title": "CSS",
+        "description": "CSS, web sayfalarında stil ve düzen oluşturmak için kullanılır."
+      }
+    ],
+    "profile": {
+      "title": "Profil",
+      "altBaslik": "Hakkımda",
+      "dogumTarihi": "Doğum Tarihi:",
+      "birthDate": "01/01/1990",
+      "lokasyon": "İkametgah Yeri:",
+      "location": "İstanbul, Türkiye",
+      "ogrenimDurumu": "Öğrenim Durumu:",
+      "education": "Bilgisayar Bilimleri Lisans Derecesi",
+      "rol": "Tercih Ettiği Rol:",
+      "preferredRole": "Frontend Geliştirici",
+      "aboutMe": "Öğrenme ve gelişim tutkusuna sahip, son derece motive ve adanmış bir bireyim. Frontend geliştirme konusunda büyük bir ilgim var ve insanlara yardımcı olan ve gerçek dünya sorunlarını çözen anlamlı projelere katkıda bulunmak için sabırsızlanıyorum. Ekip çalışmasından, zorlukların üstesinden gelmekten ve sürekli becerilerimi geliştirmekten keyif alıyorum."
+    },
+    "projects": [
+      {
+        "id": 1,
+        "title": "Proje 1",
+        "description": "Proje 1 için açıklama.",
+        "image": "/path/to/image1.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Proje 2",
+        "description": "Proje 2 için açıklama.",
+        "image": "/path/to/image2.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Proje 3",
+        "description": "Proje 3 için açıklama.",
+        "image": "/path/to/image3.jpg"
+      }
+    ],
+    "footer": {
+      "heading": "Bir sonraki projenizde birlikte çalışalım.",
+      "paragraph": "Harika ve yenilikçi bir şey inşa etmenize yardımcı olmak için buradayız.",
+      "buttons": {
+        "personalBlog": "Kişisel Blog",
+        "github": "Github",
+        "linkedin": "Linkedin"
+      }
+    }
+  }
+}

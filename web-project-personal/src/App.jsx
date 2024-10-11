@@ -7,18 +7,19 @@ import Projects from "./components/Projects/Projects";
 import Footer from './components/Footer/Footer';
 import DarkModeButton from "./components/Dugmeler/DarkModeButton";
 import { useState } from "react";
+import { LanguageProvider } from './context/LanguageContext';
 
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode(!darkMode); // Dark mode'u toggle eden fonksiyon
   };
 
   return (
-
-      <div className={`flex flex-col items-center ${darkMode ? 'dark' : ''}`}>
+    <LanguageProvider>
+      <div className={`App flex flex-col items-center ${darkMode ? 'dark bg-slate-900 text-white' : 'bg-white text-black'}`}>
         {/* Dark Mode Button */}
         <DarkModeButton darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Heroes darkMode={darkMode} />
@@ -27,9 +28,8 @@ function App() {
         <ProfileComponent darkMode={darkMode} />
         <Projects darkMode={darkMode} />
         <Footer darkMode={darkMode} />
-      </div>
-
-
+      </div >
+    </LanguageProvider>
   );
 }
 

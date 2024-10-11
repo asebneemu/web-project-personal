@@ -1,31 +1,30 @@
-import { useEffect, useState } from 'react';
+import { useLanguage } from '../../context/LanguageContext'; // Dil context'ini kullanıyoruz
 
+// eslint-disable-next-line react/prop-types
 function Heroes({ darkMode }) {
-  const [styles, setStyles] = useState(null); // JSON verilerini tutmak için state
-  const [error, setError] = useState(null); // Hata mesajını tutmak için
+  // Dark mode'a göre stilleri ayarlıyoruz
+  const styles = darkMode
+    ? {
+        bgColor: 'bg-gray-800',
+        textColor: 'text-white',
+        buttonBgColor: 'bg-gray-700',
+        buttonTextColor: 'text-white',
+        circleBgColor: 'bg-[#EEEBFF]',
+        circleTextColor: 'text-[#3730A3]',
+        buttonBorderColor: 'border-[#3730A3]',
+      }
+    : {
+        bgColor: 'bg-white',
+        textColor: 'text-black',
+        buttonBgColor: 'bg-white',
+        buttonTextColor: 'text-[#3730A3]',
+        circleBgColor: 'bg-[#EEEBFF]',
+        circleTextColor: 'text-[#3730A3]',
+        buttonBorderColor: 'border-transparent',
+      };
 
-  // JSON verisini fetch ile alıyoruz
-  useEffect(() => {
-    fetch('/data/data.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setStyles(darkMode ? data.heroes.darkMode : data.heroes.lightMode);
-      })
-      .catch((error) => setError(error.message));
-  }, [darkMode]); // darkMode değiştiğinde yeniden fetch yapılacak
-
-  if (error) {
-    return <div>Error: {error}</div>; // Hata mesajı varsa göster
-  }
-
-  if (!styles) {
-    return <div>Loading...</div>; // Veriler yüklenene kadar loading
-  }
+  // Dil ve içerik verilerini alıyoruz
+  const { content } = useLanguage();
 
   return (
     <div className={`w-full p-5 ${styles.bgColor} ${styles.textColor}`}>
@@ -39,13 +38,13 @@ function Heroes({ darkMode }) {
         {/* İkinci div: Üç adet buton */}
         <div className="flex space-x-4">
           <button className={`px-4 py-2 border-2 rounded ${styles.buttonBgColor} ${styles.buttonTextColor} ${styles.buttonBorderColor} hover:border-[#3730A3]`}>
-            Skills
+            {content.heroes.skillsText}
           </button>
           <button className={`px-4 py-2 border-2 rounded ${styles.buttonBgColor} ${styles.buttonTextColor} ${styles.buttonBorderColor} hover:border-[#3730A3]`}>
-            Projects
+            {content.heroes.projectsText}
           </button>
           <button className={`px-4 py-2 border-2 rounded ${styles.buttonBgColor} ${styles.buttonTextColor} ${styles.buttonBorderColor} hover:border-[#3730A3]`}>
-            Hire Me!
+            {content.heroes.hireMeText}
           </button>
         </div>
       </div>

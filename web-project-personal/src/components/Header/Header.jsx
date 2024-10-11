@@ -1,37 +1,27 @@
-import { useEffect, useState } from 'react';
 import resim from './person.jpeg';
+import { useLanguage } from '../../context/LanguageContext'; // LanguageContext'i import ediyoruz
 
 function Header({ darkMode }) {
-  const [headerData, setHeaderData] = useState(null);
-  const [error, setError] = useState(null);
+  // Dark mode'a göre stilleri ayarlıyoruz
+  const styles = darkMode
+    ? {
+        bgColor: 'bg-gray-800',
+        textColor: 'text-white',
+        buttonBgColor: 'bg-gray-700',
+        buttonTextColor: 'text-white',
+      }
+    : {
+        bgColor: 'bg-white',
+        textColor: 'text-black',
+        buttonBgColor: 'bg-white',
+        buttonTextColor: 'text-[#3730A3]',
+      };
 
-  useEffect(() => {
-    fetch('/data/data.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        // darkMode true ise darkMode verilerini, değilse lightMode verilerini alıyoruz
-        const modeData = darkMode ? data.header.darkMode : data.header.lightMode;
-        const contentData = data.header.content;
-        setHeaderData({ ...modeData, ...contentData });
-      })
-      .catch((error) => setError(error.message));
-  }, [darkMode]); // darkMode değiştiğinde yeniden fetch yapar
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!headerData) {
-    return <div>Loading...</div>; // Veriler yüklenene kadar loading
-  }
+  // Dil yönetimi için useLanguage hook'u
+  const { content } = useLanguage(); // Context'ten gelen veriyi kullanıyoruz
 
   return (
-    <div className={`w-full p-5 ${headerData.bgColor} ${headerData.textColor}`}>
+    <div className={`w-full p-5 ${styles.bgColor} ${styles.textColor}`}>
       {/* İçteki Div: 1140px genişliğinde olacak ve ortalanacak */}
       <header className="w-[1140px] h-auto flex mx-auto">
         {/* İlk div: Genişliğin %55'ini kaplayan div */}
@@ -42,27 +32,33 @@ function Header({ darkMode }) {
             <div className={`w-[70px] h-[2px] ${darkMode ? 'bg-white' : 'bg-black'}`}></div>
 
             {/* İsim yazısı */}
-            <span className="text-xl font-semibold pl-4">{headerData.name}</span>
+            <span className="text-xl font-semibold pl-4">{content.header.name}</span>
           </div>
 
           {/* H1: Creative thinker, Minimalism lover */}
-          <h1 className="mt-4 text-6xl font-bold pt-10">{headerData.title}</h1>
+          <h1 className="mt-4 text-6xl font-bold pt-10">{content.header.title}</h1>
 
           {/* P: Paragraf metni */}
           <p className="mt-2 text-lg pt-10 pr-20">
-            {headerData.description}
+            {content.header.description}
           </p>
 
           {/* Div: Üç butondan oluşan container */}
           <div className="mt-4 space-x-4 pt-20 pb-5">
-            <button className={`px-4 py-2 rounded ${headerData.buttonBgColor} ${headerData.buttonTextColor} hover:bg-[#3730A3] hover:text-white`}>
-              {headerData.buttons.hireMe}
+            <button
+              className={`px-4 py-2 rounded ${styles.buttonBgColor} ${styles.buttonTextColor} hover:bg-[#3730A3] hover:text-white`}
+            >
+              {content.header.buttons.hireMe}
             </button>
-            <button className={`px-4 py-2 rounded ${headerData.buttonBgColor} ${headerData.buttonTextColor} hover:bg-[#3730A3] hover:text-white`}>
-              {headerData.buttons.github}
+            <button
+              className={`px-4 py-2 rounded ${styles.buttonBgColor} ${styles.buttonTextColor} hover:bg-[#3730A3] hover:text-white`}
+            >
+              {content.header.buttons.github}
             </button>
-            <button className={`px-4 py-2 rounded ${headerData.buttonBgColor} ${headerData.buttonTextColor} hover:bg-[#3730A3] hover:text-white`}>
-              {headerData.buttons.linkedin}
+            <button
+              className={`px-4 py-2 rounded ${styles.buttonBgColor} ${styles.buttonTextColor} hover:bg-[#3730A3] hover:text-white`}
+            >
+              {content.header.buttons.linkedin}
             </button>
           </div>
         </div>
